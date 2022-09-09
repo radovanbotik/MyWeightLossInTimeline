@@ -102,28 +102,28 @@ h5 {
   padding: 1em 2em;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 10em;
-  column-gap: 1em;
+  /* grid-template-columns: 1fr 1fr; */
+  row-gap: 5em;
+  /* column-gap: 1em; */
   position: relative;
 }
 /* odd events to the right */
 /* _______________________ */
-li:nth-child(odd) {
+/* li:nth-child(odd) {
   grid-column: 2/3;
   grid-row: span 2;
-}
+} */
 
 /* even events to the left */
 /* _______________________ */
 
-li:nth-child(even) {
+/* li:nth-child(even) {
   grid-column: 1/2;
   grid-row: span 2;
-}
+} */
 
 /* line through the middle of body */
-.timeline-list::after {
+/* .timeline-list::after {
   content: "";
   position: absolute;
   width: 1px;
@@ -132,7 +132,7 @@ li:nth-child(even) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 /*  a single event on timeline */
 
@@ -181,5 +181,41 @@ li:nth-child(even) {
 @media (min-width: 800px) {
   html {
     font-size: 38%;
+  }
+}
+
+@media (min-width: 600px) {
+  .timeline-list {
+    /* padding: 1em 2em;
+        list-style: none;
+        display: grid; */
+    grid-template-columns: 1fr 1fr;
+    /* row-gap: 10em; */
+    column-gap: 1em;
+    /* position: relative; */
+  }
+  /* odd events to the right */
+  /* _______________________ */
+  li:nth-child(odd) {
+    grid-column: 2/3;
+    grid-row: span 2;
+  }
+
+  /* even events to the left */
+  /* _______________________ */
+
+  li:nth-child(even) {
+    grid-column: 1/2;
+    grid-row: span 2;
+  }
+  .timeline-list::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
