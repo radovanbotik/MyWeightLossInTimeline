@@ -4,14 +4,39 @@
   margin: 0;
 }
 /* general styles */
+html {
+  font-size: 62.5%;
+}
 body {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.618rem;
+
+  background: #d9a7c7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fffcdc,
+    #d9a7c7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fffcdc,
+    #d9a7c7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h1 {
+  font-size: 6.854rem;
+}
+h2 {
+  font-size: 4.236rem;
 }
 
+h4 {
+  font-size: 2.618rem;
+}
 /* modifier classes */
 .center-column {
   display: flex;
@@ -28,12 +53,17 @@ body {
   align-items: center;
 }
 
+.glass {
+  background-color: rgba(255, 255, 255, 0.401);
+  border: 2px solid white;
+  mix-blend-mode: normal;
+}
 /* layout */
 
 /* body of timeline + grid */
 .timeline-container {
   width: 75vw;
-  border: 1px solid black;
+  max-width: 800px;
 }
 .timeline-list {
   padding: 0 1em;
@@ -47,7 +77,6 @@ body {
 /* odd events to the right */
 /* _______________________ */
 li:nth-child(odd) {
-  background-color: red;
   grid-column: 2/3;
   grid-row: span 2;
 }
@@ -56,7 +85,6 @@ li:nth-child(odd) {
 /* _______________________ */
 
 li:nth-child(even) {
-  background-color: blue;
   grid-column: 1/2;
   grid-row: span 2;
 }
@@ -65,9 +93,9 @@ li:nth-child(even) {
 .timeline-list::after {
   content: "";
   position: absolute;
-  width: 0.25em;
+  width: 1px;
   height: 100%;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -79,12 +107,24 @@ li:nth-child(even) {
   padding: 1em;
   position: relative;
   white-space: pre-line;
+  border-radius: 10px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.245);
 }
 
 /* all children in event aligned to start */
 .timeline-list__item > * {
   align-self: flex-start;
 }
+
+/* .timeline-list__item::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: blur(1em);
+  background-color: rgba(255, 255, 255, 0.399);
+  z-index: -1;
+} */
 
 /* li:nth-child(odd):after {
   content: "";
