@@ -130,6 +130,8 @@ li:nth-child(even) {
 /*  a single event on timeline */
 
 .timeline-list__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 1em;
   position: relative;
   white-space: pre-line;
@@ -137,13 +139,19 @@ li:nth-child(even) {
 }
 
 /* all children in event aligned to start */
-.timeline-list__item > * {
-  align-self: flex-start;
-}
+
 .timeline-list__item > h1 {
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.05);
+}
+.timeline-list__item > h4 {
+  justify-self: flex-end;
   align-self: flex-end;
 }
-
+.timeline-list__item > p {
+  justify-self: flex-end;
+  grid-column: 1/3;
+}
 @media (min-width: 800px) {
   html {
     font-size: 62.5%;
