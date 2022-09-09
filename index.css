@@ -148,15 +148,7 @@ h5 {
   /* z-index: 1;
   position: relative; */
 }
-.timeline-list__item > * {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: 200ms linear;
-}
-.timeline-list__item:hover > * {
-  opacity: 100%;
-  transform: translateX(0);
-}
+
 /* all children in event aligned to start */
 
 .timeline-list__item > h1 {
@@ -217,5 +209,14 @@ h5 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .timeline-list__item > * {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 200ms linear;
+  }
+  .timeline-list__item:hover > * {
+    opacity: 100%;
+    transform: translateX(0);
   }
 }
