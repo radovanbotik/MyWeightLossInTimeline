@@ -147,11 +147,12 @@ li:nth-child(even) {
   /* z-index: 1;
   position: relative; */
 }
-/* .timeline-list__item > * {
-  transform: translateY(100%);
-  position: absolute;
-  z-index: 0;
-} */
+.timeline-list__item > * {
+  opacity: 0;
+}
+.timeline-list__item:hover > * {
+  opacity: 100%;
+}
 /* all children in event aligned to start */
 
 .timeline-list__item > h1 {
