@@ -65,12 +65,10 @@ h5 {
   position: relative;
   min-height: 100vh;
   height: 100%;
-  /* width: 100vw; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 .mask {
   position: absolute;
@@ -137,7 +135,7 @@ h5 {
 @media (min-width: 600px) {
   .timeline-list {
     grid-template-columns: 1fr 1fr;
-    column-gap: 1em;
+    column-gap: 4em;
   }
 
   /* odd events to the right */
@@ -173,4 +171,12 @@ h5 {
     opacity: 100%;
     transform: translateX(0);
   } */
+}
+.threefour {
+  position: absolute;
+  top: 25%;
+  /* left: 50%; */
+  width: 10px;
+  height: 10px;
+  background-color: black;
 }
