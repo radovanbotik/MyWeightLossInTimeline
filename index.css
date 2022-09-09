@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
 }
+/* general styles */
 body {
   height: 100vh;
   display: flex;
@@ -10,6 +11,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* modifier classes */
 .center-column {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +28,9 @@ body {
   align-items: center;
 }
 
+/* layout */
+
+/* body of timeline + grid */
 .timeline-container {
   width: 75vw;
   border: 1px solid black;
@@ -38,6 +44,24 @@ body {
   column-gap: 1em;
   position: relative;
 }
+/* odd events to the right */
+/* _______________________ */
+li:nth-child(odd) {
+  background-color: red;
+  grid-column: 2/3;
+  grid-row: span 2;
+}
+
+/* even events to the left */
+/* _______________________ */
+
+li:nth-child(even) {
+  background-color: blue;
+  grid-column: 1/2;
+  grid-row: span 2;
+}
+
+/* line through the middle of body */
 .timeline-list::after {
   content: "";
   position: absolute;
@@ -48,20 +72,20 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*  a single event on timeline */
+
 .timeline-list__item {
   padding: 1em;
   position: relative;
   white-space: pre-line;
 }
+
+/* all children in event aligned to start */
 .timeline-list__item > * {
   align-self: flex-start;
 }
 
-li:nth-child(odd) {
-  background-color: red;
-  grid-column: 2/3;
-  grid-row: span 2;
-}
 /* li:nth-child(odd):after {
   content: "";
   position: absolute;
@@ -72,8 +96,7 @@ li:nth-child(odd) {
   transform: translate(-100%, -50%);
   border-radius: 50%;
 } */
-li:nth-child(even) {
-  background-color: blue;
-  grid-column: 1/2;
-  grid-row: span 2;
-}
+
+/* li:not(:first-child) {
+  display: none;
+} */
