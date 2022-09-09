@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
+
+:root {
+  --Lacquer: "Lacquer", cursive;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.618rem;
-
+  font-family: var(--Lacquer);
   /* background-image: url(./textures/textured-paper.png),
     linear-gradient(to right, #fffcdc, #d9a7c7); */
 }
@@ -154,6 +160,6 @@ li:nth-child(even) {
 }
 @media (min-width: 800px) {
   html {
-    font-size: 62.5%;
+    font-size: 52%;
   }
 }
