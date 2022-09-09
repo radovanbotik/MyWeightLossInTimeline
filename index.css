@@ -5,7 +5,7 @@
 }
 /* general styles */
 html {
-  font-size: 62.5%;
+  font-size: 40%;
 }
 body {
   height: 100vh;
@@ -15,17 +15,8 @@ body {
   align-items: center;
   font-size: 1.618rem;
 
-  background: #d9a7c7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #fffcdc,
-    #d9a7c7
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #fffcdc,
-    #d9a7c7
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-image: url(./textures/textured-paper.png),
+    linear-gradient(to right, #fffcdc, #d9a7c7); */
 }
 h1 {
   font-size: 6.854rem;
@@ -36,6 +27,13 @@ h2 {
 
 h4 {
   font-size: 2.618rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
 }
 /* modifier classes */
 .center-column {
@@ -55,6 +53,12 @@ h4 {
 
 .glass {
   background-color: rgba(255, 255, 255, 0.401);
+  background-image: url(./textures/snow.png),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    );
   border: 2px solid white;
   mix-blend-mode: normal;
 }
@@ -62,9 +66,32 @@ h4 {
 
 /* body of timeline + grid */
 .timeline-container {
+  background-image: url(./textures/textured-paper.png),
+    linear-gradient(to right, #fffcdc, #d9a7c7);
+
+  position: relative;
+  height: 100%;
   width: 75vw;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.mask {
+  position: absolute;
+  mix-blend-mode: exclusion;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 255, 34);
+}
+.mask1 {
+  clip-path: circle(25% at 50% 0%);
+}
+.mask2 {
+  clip-path: circle(25% at 50% 100%);
+}
+
 .timeline-list {
   padding: 0 1em;
   list-style: none;
@@ -140,3 +167,9 @@ li:nth-child(even) {
 /* li:not(:first-child) {
   display: none;
 } */
+
+@media (min-width: 800px) {
+  html {
+    font-size: 62.5%;
+  }
+}
